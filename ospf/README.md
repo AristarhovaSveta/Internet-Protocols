@@ -88,32 +88,3 @@ Router(config)#router ospf 1
 Router(config-router)#area 1 stub no-summary
 Router(config-router)#end
 ```
-
-#### R1AR1, ASBR
-```
-Router>en
-Router#conf t
-Router(config)#router ospf 1
-Router(config-router)#no area 1 stub
-Router(config-router)#area 1 nssa
-Router(config-router)#end
-```
-
-#### ABR
-```
-Router>en
-Router#conf t
-Router(config)#router ospf 1
-Router(config-router)#area 1 nssa
-Router(config-router)#area 1 nssa default-information-originate
-Router(config-router)#end
-```
-
-#### ASBR
-```
-Router>en
-Router#conf t
-Router(config)#router ospf 1
-Router(config-router)#redistribute static subnets
-Router(config-router)#end
-```
